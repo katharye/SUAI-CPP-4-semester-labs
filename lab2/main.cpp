@@ -1,5 +1,6 @@
 #include <iostream>
 #include <limits>
+
 #include "linkedlist"
 #include "time"
 
@@ -16,13 +17,11 @@ int showMainMenu() {
     cout << "0. Exit\n";
     cout << "========================================\n";
     cout << "Your choice: ";
-    
+
     while (!(cin >> choice)) {
         cout << "Error! Enter a number: ";
-        
     }
-    
-    
+
     return choice;
 }
 
@@ -43,17 +42,15 @@ void showLinkedListMenu() {
 void runLinkedListMenu() {
     LinkedList list;
     int choice;
-    
+
     do {
         showLinkedListMenu();
         cout << "Your choice: ";
-        
+
         while (!(cin >> choice)) {
             cout << "Error! Enter a number: ";
-            
         }
-        
-        
+
         switch (choice) {
             case 1: {
                 ++list;
@@ -93,9 +90,8 @@ void runLinkedListMenu() {
                 cout << "Enter number of elements: ";
                 while (!(cin >> count) || count < 0) {
                     cout << "Error! Enter a positive number: ";
-                    
                 }
-                
+
                 list = LinkedList(count);
                 cout << "List created\n";
                 break;
@@ -146,36 +142,31 @@ void showTimeMenu() {
 void runTimeMenu() {
     Time currentTime;
     int choice;
-    
+
     do {
         showTimeMenu();
         cout << "Your choice: ";
-        
+
         while (!(cin >> choice)) {
             cout << "Error! Enter a number: ";
-            
         }
-        
-        
+
         switch (choice) {
             case 1: {
                 int h, m, s;
                 cout << "Enter hours: ";
                 while (!(cin >> h)) {
                     cout << "Error! Enter a number: ";
-                    
                 }
                 cout << "Enter minutes: ";
                 while (!(cin >> m)) {
                     cout << "Error! Enter a number: ";
-                    
                 }
                 cout << "Enter seconds: ";
                 while (!(cin >> s)) {
                     cout << "Error! Enter a number: ";
-                    
                 }
-                
+
                 currentTime = Time(h, m, s);
                 cout << "Time created\n";
                 break;
@@ -185,9 +176,8 @@ void runTimeMenu() {
                 cout << "Enter seconds to add: ";
                 while (!(cin >> value)) {
                     cout << "Error! Enter a number: ";
-                    
                 }
-                
+
                 Time result = currentTime + value;
                 cout << "Initial: ";
                 currentTime.print_time();
@@ -200,9 +190,8 @@ void runTimeMenu() {
                 cout << "Enter seconds to subtract: ";
                 while (!(cin >> value)) {
                     cout << "Error! Enter a number: ";
-                    
                 }
-                
+
                 Time result = currentTime - value;
                 cout << "Initial: ";
                 currentTime.print_time();
@@ -215,9 +204,8 @@ void runTimeMenu() {
                 cout << "Enter multiplier: ";
                 while (!(cin >> value)) {
                     cout << "Error! Enter a number: ";
-                    
                 }
-                
+
                 Time result = currentTime * value;
                 cout << "Initial: ";
                 currentTime.print_time();
@@ -230,9 +218,8 @@ void runTimeMenu() {
                 cout << "Enter divisor: ";
                 while (!(cin >> value)) {
                     cout << "Error! Enter a number: ";
-                    
                 }
-                
+
                 Time result = currentTime / value;
                 cout << "Initial: ";
                 currentTime.print_time();
@@ -289,10 +276,10 @@ void runTimeMenu() {
 
 int main() {
     int mainChoice;
-    
+
     do {
         mainChoice = showMainMenu();
-        
+
         switch (mainChoice) {
             case 1: {
                 runLinkedListMenu();
@@ -313,6 +300,6 @@ int main() {
             }
         }
     } while (mainChoice != 0);
-    
+
     return 0;
 }
