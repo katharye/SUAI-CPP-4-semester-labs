@@ -2,6 +2,6 @@
 
 
 clang-format -n *.cpp
-g++ -o lab$1 *.cpp
+g++ -Wall -Werror -Wextra -o lab$1 *.cpp
 # clear 
 ./lab$1
